@@ -45,7 +45,7 @@ public class SucursalService implements ISucursal {
         System.out.println("** Sucursales involucradas: **");
         for(Sucursal lista : sucursales){
             System.out.println(lista.mostrarDatos());
-            System.out.println("-------------------------");
+            System.out.println("------------------------");
         }
 
         return sucursales;
