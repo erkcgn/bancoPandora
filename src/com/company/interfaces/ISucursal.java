@@ -9,8 +9,8 @@ import java.util.List;
 
 public interface ISucursal {
 
-    public List<Sucursal> listaSucursales();
-    public void guardarSucursales();
+    public List<Sucursal> listarSucursales();
+    public void guardarSucursal();
     public SucursalOrigen crearSucursalOrigen();
     public SucursalDestino crearSucursalDestino();
 

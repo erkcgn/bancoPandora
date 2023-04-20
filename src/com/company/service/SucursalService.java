@@ -4,7 +4,6 @@ import com.company.entity.Sucursal;
 import com.company.entity.SucursalDestino;
 import com.company.entity.SucursalOrigen;
 import com.company.interfaces.ISucursal;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +40,7 @@ public class SucursalService implements ISucursal {
     }
 
     @Override
-    public List<Sucursal> listaSucursales(){
+    public List<Sucursal> listarSucursales(){
         sucursales.add(crearSucursalOrigen());
         sucursales.add(crearSucursalDestino());
         System.out.println("** Sucursales involucradas: **");
@@ -54,7 +53,7 @@ public class SucursalService implements ISucursal {
     }
 
     @Override
-    public void guardarSucursales(){
+    public void guardarSucursal(){
         System.out.println("Revisar");
     }
 

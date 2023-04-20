@@ -3,16 +3,14 @@ package com.company.entity;
 public class ClienteOrigen extends Cliente{
     private int idClienteOrigen;
     private CuentaOrigen cuentaOrigen;
-    private String alias;
 
     public ClienteOrigen() {
     }
 
-    public ClienteOrigen(String nombre, int dni, Sucursal sucursal, Cuenta cuenta, int idClienteOrigen, CuentaOrigen cuentaOrigen, String alias) {
+    public ClienteOrigen(String nombre, int dni, Sucursal sucursal, Cuenta cuenta, int idClienteOrigen, CuentaOrigen cuentaOrigen) {
         super(nombre, dni, sucursal, cuenta);
         this.idClienteOrigen = idClienteOrigen;
         this.cuentaOrigen = cuentaOrigen;
-        this.alias = alias;
     }
 
     public int getIdClienteOrigen() {
@@ -31,20 +29,11 @@ public class ClienteOrigen extends Cliente{
         this.cuentaOrigen = cuentaOrigen;
     }
 
-    public String getAlias() {
-        return alias;
-    }
-
-    public void setAlias(String alias) {
-        this.alias = alias;
-    }
-
     @Override
     public String mostrarDatos(){
         return "Nombre del Cliente Origen: " + super.getNombre() + '\n'+
                 "DNI: " + super.getDni() + '\n'+
                 "Sucursal: " + super.getSucursal() + '\n'+
-                "Cuenta: " + getCuentaOrigen() + '\n' +
-                "Alias: " + getAlias();
+                "Cuenta: " + getCuentaOrigen();
     }
 }

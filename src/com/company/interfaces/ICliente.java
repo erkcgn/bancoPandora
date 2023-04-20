@@ -7,8 +7,8 @@ import com.company.entity.ClienteOrigen;
 import java.util.List;
 
 public interface ICliente {
-    List<Cliente> listaClientes();
-    public void guardarClientes();
+    List<Cliente> listarClientes();
+    public void guardarCliente();
     public ClienteOrigen crearClienteOrigen();
     public ClienteDestino crearClienteDestino();
 }

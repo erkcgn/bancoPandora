@@ -3,9 +3,7 @@ package com.company.service;
 import com.company.entity.Cliente;
 import com.company.entity.ClienteDestino;
 import com.company.entity.ClienteOrigen;
-import com.company.entity.SucursalOrigen;
 import com.company.interfaces.ICliente;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +13,7 @@ public class ClienteService implements ICliente {
     Scanner input = new Scanner(System.in).useDelimiter("\n");
 
     @Override
-    public List<Cliente> listaClientes() {
+    public List<Cliente> listarClientes() {
         clientes.add(crearClienteOrigen());
         clientes.add(crearClienteDestino());
         System.out.println("** Clientes involucrados **");
@@ -28,7 +26,7 @@ public class ClienteService implements ICliente {
     }
 
     @Override
-    public void guardarClientes() {
+    public void guardarCliente() {
         System.out.println("Revisar");
     }
 
@@ -40,7 +38,6 @@ public class ClienteService implements ICliente {
         clienteOrigen.setNombre(input.next());
         System.out.println("DNI: ");
         clienteOrigen.setDni(input.nextInt());
-        clienteOrigen.setAlias(input.next());
         //clienteOrigen.getSucursal();
         //clienteOrigen.getCuentaOrigen(); // CREAR UN SERVICIO QUE LOS JUNTE?
 
@@ -55,7 +52,6 @@ public class ClienteService implements ICliente {
         clienteDestino.setNombre(input.next());
         System.out.println("DNI: ");
         clienteDestino.setDni(input.nextInt());
-        clienteDestino.setAlias(input.next());
         //clienteOrigen.getSucursal();
         //clienteOrigen.getCuentaOrigen(); // CREAR UN SERVICIO QUE LOS JUNTE?
 
