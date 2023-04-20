@@ -46,13 +46,13 @@ public class Transferencia{
         this.cuentaDestino = cuentaDestino;
     }
 
-    @Override
-    public String toString() {
-        return "Transferencia{" +
-                "idTransferencia=" + idTransferencia +
-                ", monto=" + monto +
-                ", cuentaOrigen=" + cuentaOrigen +
-                ", cuentaDestino=" + cuentaDestino +
-                '}';
+    public String mostrarDetalle(){
+        return "Cuenta Origen de la transferencia: " + getCuentaOrigen() + '\n'+
+                "Alias: " + getCuentaOrigen().getAlias() + '\n'+
+                "Comprobante núm: " + getIdTransferencia() + '\n'+
+                "Monto: $" + getMonto() + '\n'+
+                "Cuenta Destinatario: " + getCuentaDestino() + '\n'+
+                "Alias Dstinatario: " + getCuentaDestino().getAlias();
     }
+
 }
