@@ -41,10 +41,10 @@ public class ClienteDestino extends Cliente{
 
     @Override
     public String mostrarDatos(){
-        return "Nombre del Cliente Destinatario: " + super.getNombre() +
-                ", DNI: " + super.getDni() + '\''+
-                ", Sucursal: " + super.getSucursal() + '\''+
-                ", Cuenta: " + getCuentaDestino() + '\'' +
-                ", Alias: " + getAlias() + '\'';
+        return "Nombre del Cliente Destinatario: " + super.getNombre() + '\n'+
+                "DNI: " + super.getDni() + '\n'+
+                "Sucursal: " + super.getSucursal() + '\n'+
+                "Cuenta: " + getCuentaDestino() + '\n' +
+                "Alias: " + getAlias() + '\n';
     }
 }
