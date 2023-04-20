@@ -1,13 +1,17 @@
 package com.company.entity;
 
-public class Transferencia extends Operacion{
+public class Transferencia{
     private int idTransferencia;
     private double monto;
+    private CuentaOrigen cuentaOrigen;
+    private CuentaDestino cuentaDestino;
 
-    public Transferencia(CuentaOrigen cuentaOrigen, CuentaDestino cuentaDestino, int idTransferencia, double monto) {
-        super(cuentaOrigen, cuentaDestino);
+
+    public Transferencia(int idTransferencia, double monto, CuentaOrigen cuentaOrigen, CuentaDestino cuentaDestino) {
         this.idTransferencia = idTransferencia;
         this.monto = monto;
+        this.cuentaOrigen = cuentaOrigen;
+        this.cuentaDestino = cuentaDestino;
     }
 
     public int getIdTransferencia() {
@@ -26,12 +30,29 @@ public class Transferencia extends Operacion{
         this.monto = monto;
     }
 
+    public CuentaOrigen getCuentaOrigen() {
+        return cuentaOrigen;
+    }
+
+    public void setCuentaOrigen(CuentaOrigen cuentaOrigen) {
+        this.cuentaOrigen = cuentaOrigen;
+    }
+
+    public CuentaDestino getCuentaDestino() {
+        return cuentaDestino;
+    }
+
+    public void setCuentaDestino(CuentaDestino cuentaDestino) {
+        this.cuentaDestino = cuentaDestino;
+    }
+
     @Override
-    public String mostrarDetalle() {
-        return "Detalle de la Transferencia Realizada: " +
-                ", Número de la transferencia: " + getIdTransferencia() + '\'' +
-                ", Cuenta que realiza la operación: " + super.getCuentaOrigen() + '\'' +
-                ", Cuenta del destinatario: " + super.getCuentaDestino() + '\'' +
-                ", Monto de la operación: " + getMonto() + '\'';
+    public String toString() {
+        return "Transferencia{" +
+                "idTransferencia=" + idTransferencia +
+                ", monto=" + monto +
+                ", cuentaOrigen=" + cuentaOrigen +
+                ", cuentaDestino=" + cuentaDestino +
+                '}';
     }
 }

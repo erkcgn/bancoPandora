@@ -3,15 +3,13 @@ package com.company.entity;
 public abstract class Cuenta {
     private String tipoCuenta;
     private double saldo;
-    private Operacion operacion;
 
     public Cuenta() {
     }
 
-    public Cuenta(String tipoCuenta, double saldo, Operacion operacion) {
+    public Cuenta(String tipoCuenta, double saldo) {
         this.tipoCuenta = tipoCuenta;
         this.saldo = saldo;
-        this.operacion = operacion;
     }
 
     public String getTipoCuenta() {
@@ -29,14 +27,6 @@ public abstract class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    public Operacion getOperacion() {
-        return operacion;
-    }
-
-    public void setOperacion(Operacion operacion) {
-        this.operacion = operacion;
-    }
     public abstract String verSaldo();
 
     @Override
@@ -44,7 +34,6 @@ public abstract class Cuenta {
         return "Cuenta{" +
                 "tipoCuenta='" + tipoCuenta + '\'' +
                 ", saldo=" + saldo +
-                ", operacion=" + operacion +
                 '}';
     }
 }

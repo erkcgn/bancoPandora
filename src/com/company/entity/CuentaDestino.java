@@ -7,8 +7,8 @@ public class CuentaDestino extends Cuenta{
     public CuentaDestino() {
     }
 
-    public CuentaDestino(String tipoCuenta, double saldo, Operacion operacion, int idCuentaDestino, String alias) {
-        super(tipoCuenta, saldo, operacion);
+    public CuentaDestino(String tipoCuenta, double saldo, int idCuentaDestino, String alias) {
+        super(tipoCuenta, saldo);
         this.idCuentaDestino = idCuentaDestino;
         this.alias = alias;
     }

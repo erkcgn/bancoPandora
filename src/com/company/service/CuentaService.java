@@ -41,7 +41,6 @@ public class CuentaService implements ICuenta {
         cuentaOrigen.setIdCuentaOrigen(input.nextInt());
         System.out.println("Alias: ");
         cuentaOrigen.setAlias(input.next());
-        //OPERACION?
 
         return cuentaOrigen;
     }
@@ -58,7 +57,6 @@ public class CuentaService implements ICuenta {
         cuentaDestino.setIdCuentaDestino(input.nextInt());
         System.out.println("Alias: ");
         cuentaDestino.setAlias(input.next());
-        //OPERACION?
 
         return null;
     }
