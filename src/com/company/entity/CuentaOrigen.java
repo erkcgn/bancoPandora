@@ -2,13 +2,15 @@ package com.company.entity;
 
 public class CuentaOrigen extends Cuenta{
     private int idCuentaOrigen;
+    private String alias;
 
     public CuentaOrigen() {
     }
 
-    public CuentaOrigen(String tipoCuenta, double saldo, Operacion operacion, int idCuentaOrigen) {
+    public CuentaOrigen(String tipoCuenta, double saldo, Operacion operacion, int idCuentaOrigen, String alias) {
         super(tipoCuenta, saldo, operacion);
         this.idCuentaOrigen = idCuentaOrigen;
+        this.alias = alias;
     }
 
     public int getIdCuentaOrigen() {
@@ -17,6 +19,14 @@ public class CuentaOrigen extends Cuenta{
 
     public void setIdCuentaOrigen(int idCuentaOrigen) {
         this.idCuentaOrigen = idCuentaOrigen;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     @Override
@@ -28,6 +38,7 @@ public class CuentaOrigen extends Cuenta{
     public String toString() {
         return "CuentaOrigen{" +
                 "idCuentaOrigen=" + idCuentaOrigen +
+                ", alias='" + alias + '\'' +
                 "} " + super.toString();
     }
 }
