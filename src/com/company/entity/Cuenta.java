@@ -1,35 +1,37 @@
 package com.company.entity;
 
-public abstract class Cuenta {
-    private String tipoCuenta;
-    private double saldo = 1000.00;
+public class Cuenta {
+    private Persona titular;
+    private double saldo;
 
     public Cuenta() {
     }
 
-    public Cuenta(String tipoCuenta, double saldo) {
-        this.tipoCuenta = tipoCuenta;
+    public Cuenta(Persona titular, double saldo) {
+        this.titular = titular;
         this.saldo = saldo;
     }
 
-    public String getTipoCuenta() {
-        return tipoCuenta;
+    public Persona getTitular() {
+        return titular;
     }
 
-    public void setTipoCuenta(String tipoCuenta) {
-        this.tipoCuenta = tipoCuenta;
+    public void setTitular(Persona titular) {
+        this.titular = titular;
     }
 
     public double getSaldo() {
         return saldo;
     }
 
-    public abstract String verSaldo();
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
 
     @Override
     public String toString() {
         return "Cuenta{" +
-                "tipoCuenta='" + tipoCuenta + '\'' +
+                "titular=" + titular +
                 ", saldo=" + saldo +
                 '}';
     }

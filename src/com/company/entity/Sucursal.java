@@ -1,38 +1,22 @@
 package com.company.entity;
 
-public abstract class Sucursal {
-    private String nombre;
-    private String localidad;
+public class Sucursal extends Datos{
+    private Cuenta cuenta;
 
-    public Sucursal() {
+    public Sucursal(){
     }
-    public Sucursal(String nombre, String localidad) {
-        this.nombre = nombre;
-        this.localidad = localidad;
+    public Sucursal(String nombre, String localidad, Cuenta cuenta) {
+        super(nombre, localidad);
+        this.cuenta = cuenta;
     }
-    public String getNombre() {
-        return nombre;
+    public Cuenta getCuenta() {
+        return cuenta;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
     }
-
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
-    public abstract String mostrarDatos();
-
     @Override
-    public String toString() {
-        return "Sucursal{" +
-                ", nombre='" + nombre + '\'' +
-                ", localidad='" + localidad + '\'' +
-                '}';
+    public String mostrarDatos() {
+        return null;
     }
 }
