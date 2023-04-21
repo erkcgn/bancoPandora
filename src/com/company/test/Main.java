@@ -22,7 +22,8 @@ public class Main {
          */
 
         TransferenciaService transferenciaService = new TransferenciaService();
-        transferenciaService.listarTransferencia();
+        transferenciaService.crearTransferencia();
+        //transferenciaService.realizarTransferencia();
 
 
     }

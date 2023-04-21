@@ -15,10 +15,10 @@ public class SucursalService implements ISucursal {
     @Override
     public SucursalOrigen crearSucursalOrigen(){
         SucursalOrigen sucursalOrigen = new SucursalOrigen();
-        System.out.println("** Ingrese datos de Sucursal Origen: **");
+        System.out.println("** Ingrese los datos de su Sucursal: **");
         System.out.println("Nombre de la Sucursal: ");
         sucursalOrigen.setNombre(input.next());
-        System.out.println("Número identificador: ");
+        System.out.println("Número sucursal: ");
         sucursalOrigen.setIdSucursalOrigen(input.nextInt());
         System.out.println("Localidad: ");
         sucursalOrigen.setLocalidad(input.next());
@@ -28,10 +28,10 @@ public class SucursalService implements ISucursal {
     @Override
     public SucursalDestino crearSucursalDestino(){
         SucursalDestino sucursalDestino = new SucursalDestino();
-        System.out.println("** Ingrese datos de Sucursal Destinatario: **");
+        System.out.println("** Datos de Sucursal Destinatario: **");
         System.out.println("Nombre de la Sucursal: ");
         sucursalDestino.setNombre(input.next());
-        System.out.println("Número identificador: ");
+        System.out.println("Número sucursal: ");
         sucursalDestino.setIdSucursalDestino(input.nextInt());
         System.out.println("Localidad: ");
         sucursalDestino.setLocalidad(input.next());

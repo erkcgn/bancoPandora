@@ -1,13 +1,11 @@
 package com.company.service;
 
-import com.company.entity.Cuenta;
 import com.company.entity.CuentaDestino;
 import com.company.entity.CuentaOrigen;
 import com.company.entity.Transferencia;
 import com.company.interfaces.ITransferencia;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TransferenciaService implements ITransferencia {
@@ -32,7 +30,6 @@ public class TransferenciaService implements ITransferencia {
         clienteService.crearClienteDestino();
         cuentaService.crearCuentaDestino();
 
-
         return transferencia;
     }
 
@@ -50,15 +47,11 @@ public class TransferenciaService implements ITransferencia {
     }
 
     @Override
-    public List<String> listarTransferencia() {
+    public ArrayList<Transferencia> listarTransferencia() {
 
         transferencias.add(crearTransferencia());
+        System.out.println("** Detalle de la Operación: **");
 
-        System.out.println("** Detalle de la Operacion: **");
-        for(Transferencia lista : transferencias){
-            System.out.println(lista.mostrarDetalle());
-        }
-
-        return null;
+        return transferencias;
     }
 }

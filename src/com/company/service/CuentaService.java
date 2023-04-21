@@ -32,11 +32,9 @@ public class CuentaService implements ICuenta {
     @Override
     public CuentaOrigen crearCuentaOrigen() {
         CuentaOrigen cuentaOrigen = new CuentaOrigen();
-        System.out.println("** Ingrese datos de la Cuenta Origen para la operación: **");
+        System.out.println("** Ingrese datos de su Cuenta: **");
         System.out.println("Tipo de Cuenta: ");
         cuentaOrigen.setTipoCuenta(input.next());
-        System.out.println("Saldo Actual");
-        cuentaOrigen.verSaldo();
         System.out.println("CBU: ");
         cuentaOrigen.setIdCuentaOrigen(input.nextInt());
         System.out.println("Alias: ");
@@ -48,11 +46,9 @@ public class CuentaService implements ICuenta {
     @Override
     public CuentaDestino crearCuentaDestino() {
         CuentaDestino cuentaDestino = new CuentaDestino();
-        System.out.println("** Ingrese datos del Destinatario para la operación: **");
+        System.out.println("** Ingrese los datos para la operación: **");
         System.out.println("Tipo de Cuenta: ");
         cuentaDestino.setTipoCuenta(input.next());
-        System.out.println("Saldo Actual");
-        cuentaDestino.getSaldo();
         System.out.println("CBU: ");
         cuentaDestino.setIdCuentaDestino(input.nextInt());
         System.out.println("Alias: ");
