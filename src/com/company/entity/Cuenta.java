@@ -2,7 +2,7 @@ package com.company.entity;
 
 public abstract class Cuenta {
     private String tipoCuenta;
-    private double saldo;
+    private double saldo = 1000.00;
 
     public Cuenta() {
     }
@@ -24,9 +24,6 @@ public abstract class Cuenta {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
     public abstract String verSaldo();
 
     @Override

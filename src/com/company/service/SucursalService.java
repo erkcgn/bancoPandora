@@ -15,7 +15,7 @@ public class SucursalService implements ISucursal {
     @Override
     public SucursalOrigen crearSucursalOrigen(){
         SucursalOrigen sucursalOrigen = new SucursalOrigen();
-        System.out.println("** Ingrese datos de Sucursal Origen de la operación: **");
+        System.out.println("** Ingrese datos de Sucursal Origen: **");
         System.out.println("Nombre de la Sucursal: ");
         sucursalOrigen.setNombre(input.next());
         System.out.println("Número identificador: ");

@@ -36,8 +36,8 @@ public class CuentaService implements ICuenta {
         System.out.println("Tipo de Cuenta: ");
         cuentaOrigen.setTipoCuenta(input.next());
         System.out.println("Saldo Actual");
-        cuentaOrigen.setSaldo(input.nextInt());
-        System.out.println("Numero Identificador");
+        cuentaOrigen.verSaldo();
+        System.out.println("CBU: ");
         cuentaOrigen.setIdCuentaOrigen(input.nextInt());
         System.out.println("Alias: ");
         cuentaOrigen.setAlias(input.next());
@@ -52,8 +52,8 @@ public class CuentaService implements ICuenta {
         System.out.println("Tipo de Cuenta: ");
         cuentaDestino.setTipoCuenta(input.next());
         System.out.println("Saldo Actual");
-        cuentaDestino.setSaldo(input.nextInt());
-        System.out.println("Numero Identificador");
+        cuentaDestino.getSaldo();
+        System.out.println("CBU: ");
         cuentaDestino.setIdCuentaDestino(input.nextInt());
         System.out.println("Alias: ");
         cuentaDestino.setAlias(input.next());

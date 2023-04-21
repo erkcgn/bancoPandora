@@ -6,7 +6,9 @@ public class Transferencia{
     private CuentaOrigen cuentaOrigen;
     private CuentaDestino cuentaDestino;
 
+    public Transferencia(){
 
+    }
     public Transferencia(int idTransferencia, double monto, CuentaOrigen cuentaOrigen, CuentaDestino cuentaDestino) {
         this.idTransferencia = idTransferencia;
         this.monto = monto;
