@@ -1,11 +1,11 @@
 package com.company.interfaces;
 
 
+import com.company.entity.Sucursal;
+
 public interface ISucursal {
 
-    public void agregarSucursal(String sucursal);
+    public Sucursal crearSucursal();
     public void listarSucursales();
-    public void buscarSucursal();
-
 
 }

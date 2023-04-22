@@ -1,7 +1,9 @@
 package com.company.interfaces;
 
+import com.company.entity.Persona;
+
 public interface IPersona {
-    public void agregarPersona(String persona);
+    public Persona crearPersona();
     public void listarPersonas();
-    public void buscarPersona();
+
 }

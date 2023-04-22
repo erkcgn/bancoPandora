@@ -1,22 +1,28 @@
 package com.company.entity;
 
 public class Sucursal extends Datos{
-    private Cuenta cuenta;
+    private int idSucursal;
 
     public Sucursal(){
     }
-    public Sucursal(String nombre, String localidad, Cuenta cuenta) {
+    public Sucursal(String nombre, String localidad, int idSucursal) {
         super(nombre, localidad);
-        this.cuenta = cuenta;
+        this.idSucursal = idSucursal;
     }
-    public Cuenta getCuenta() {
-        return cuenta;
+
+    public int getIdSucursal() {
+        return idSucursal;
     }
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
+
+    public void setIdSucursal(int idSucursal) {
+        this.idSucursal = idSucursal;
     }
+
     @Override
     public String mostrarDatos() {
-        return null;
+        return "Información Registrada: " + '\n'+
+                "Nombre: " + getNombre() + '\n'+
+                "Localidad: " + getLocalidad() + '\n'+
+                "Código: " + getIdSucursal();
     }
 }

@@ -1,10 +1,10 @@
 package com.company.interfaces;
 
+import com.company.entity.Operacion;
+
 public interface IOperacion {
 
-    public void agregarOperacion(String operacion);
+    public Operacion crearOperacion();
     public void listarOperaciones();
-    public void buscarOperacion();
-
     public void iniciarTransaccion();
 }

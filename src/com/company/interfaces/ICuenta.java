@@ -1,11 +1,13 @@
 package com.company.interfaces;
 
 
+import com.company.entity.Cuenta;
+
 public interface ICuenta {
 
-    public void agregarCuenta(String cuenta);
+    public Cuenta crearCuenta();
     public void listarCuentas();
-    public void buscarCuenta();
+
 
 
 }
