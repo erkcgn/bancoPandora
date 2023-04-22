@@ -14,7 +14,7 @@ public class PersonaService implements IPersona {
     @Override
     public Persona crearPersona() {
         Persona persona = new Persona();
-        System.out.println("** DATOS PERSONA/CLIENTE **");
+        System.out.println("** DATOS CLIENTE **");
         System.out.println("Nombre: ");
         persona.setNombre(input.next());
         System.out.println("Localidad: ");
@@ -22,16 +22,17 @@ public class PersonaService implements IPersona {
         System.out.println("DNI: ");
         persona.setDni(input.next());
 
+        if (persona != null) {
+            personas.add(persona);
+        }
+
         return persona;
     }
 
     @Override
     public void listarPersonas() {
-        personas.add(crearPersona());
-
         for(Persona lista : personas){
             System.out.println(lista.mostrarDatos());
         }
-
     }
 }

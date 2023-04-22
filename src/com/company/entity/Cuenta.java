@@ -1,8 +1,8 @@
 package com.company.entity;
 
-public abstract class Cuenta {
+public class Cuenta {
     private Persona titular;
-    private double saldo;
+    private double saldo = 1000;
 
     public Cuenta() {
     }
@@ -10,6 +10,12 @@ public abstract class Cuenta {
     public Cuenta(Persona titular, double saldo) {
         this.titular = titular;
         this.saldo = saldo;
+    }
+
+    public String mostrarDetalle() {
+        return "Detalle Cuenta: " + '\n'+
+                "Saldo: " + getSaldo() + '\n'+
+                "Titular: " + getTitular();
     }
 
     public Persona getTitular() {
@@ -27,8 +33,6 @@ public abstract class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    public abstract void mostrarDetalle();
 
     @Override
     public String toString() {

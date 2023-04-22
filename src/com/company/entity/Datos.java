@@ -12,6 +12,8 @@ public abstract class Datos {
         this.localidad = localidad;
     }
 
+    public abstract String mostrarDatos();
+
     public String getNombre() {
         return nombre;
     }
@@ -28,5 +30,5 @@ public abstract class Datos {
         this.localidad = localidad;
     }
 
-    public abstract String mostrarDatos();
+
 }

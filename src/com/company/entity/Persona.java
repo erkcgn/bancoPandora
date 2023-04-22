@@ -25,4 +25,11 @@ public class Persona extends Datos{
                 "Localidad: " + getLocalidad() + '\n'+
                 "DNI: " + getDni();
     }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "dni='" + dni + '\'' +
+                "} " + super.toString();
+    }
 }

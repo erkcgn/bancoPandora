@@ -22,17 +22,17 @@ public class SucursalService implements ISucursal {
         System.out.println("Código: ");
         sucursal.setIdSucursal(input.nextInt());
 
+        if (sucursal != null) {
+            sucursales.add(sucursal);
+        }
 
         return sucursal;
     }
 
     @Override
     public void listarSucursales() {
-        sucursales.add(crearSucursal());
-
         for (Sucursal lista : sucursales) {
             System.out.println(lista.mostrarDatos());
         }
-
     }
 }
