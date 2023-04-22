@@ -30,5 +30,9 @@ public abstract class Datos {
         this.localidad = localidad;
     }
 
-
+    @Override
+    public String toString() {
+        return  "Nombre: " + nombre + '\n' +
+                "Localidad: " + localidad + '\n';
+    }
 }

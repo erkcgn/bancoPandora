@@ -20,7 +20,7 @@ public class Sucursal extends Datos{
 
     @Override
     public String mostrarDatos() {
-        return "Información Registrada: " + '\n'+
+        return "Información: " + '\n'+
                 "Nombre: " + getNombre() + '\n'+
                 "Localidad: " + getLocalidad() + '\n'+
                 "Código: " + getIdSucursal();

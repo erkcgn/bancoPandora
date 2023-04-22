@@ -11,6 +11,8 @@ public class PersonaService implements IPersona {
 
     List<Persona> personas = new ArrayList<>();
     Scanner input = new Scanner(System.in).useDelimiter("\n");
+
+    SucursalService sucursalService = new SucursalService();
     @Override
     public Persona crearPersona() {
         Persona persona = new Persona();

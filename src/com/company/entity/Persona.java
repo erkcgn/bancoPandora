@@ -20,16 +20,14 @@ public class Persona extends Datos{
 
     @Override
     public String mostrarDatos(){
-        return "Información Registrada: " + '\n'+
-                "Nombre: " + getNombre() + '\n'+
+        return  "Nombre: " + getNombre() + '\n'+
                 "Localidad: " + getLocalidad() + '\n'+
                 "DNI: " + getDni();
     }
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "dni='" + dni + '\'' +
-                "} " + super.toString();
+        return "Cliente: " +
+                "DNI: " + dni + '\n' + super.toString();
     }
 }

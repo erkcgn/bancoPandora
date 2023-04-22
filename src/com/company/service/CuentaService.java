@@ -1,15 +1,15 @@
 package com.company.service;
 
 import com.company.entity.Cuenta;
+import com.company.entity.Persona;
+import com.company.entity.Sucursal;
 import com.company.interfaces.ICuenta;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class CuentaService implements ICuenta {
     List<Cuenta> cuentas = new ArrayList<>();
-    Scanner input = new Scanner(System.in).useDelimiter("\n");
     PersonaService personaService = new PersonaService();
     SucursalService sucursalService = new SucursalService();
 
@@ -17,8 +17,7 @@ public class CuentaService implements ICuenta {
     public Cuenta crearCuenta() {
         Cuenta cuenta = new Cuenta();
         cuenta.setTitular(personaService.crearPersona());
-        System.out.println("Saldo actual: ");
-        System.out.println(cuenta.getSaldo());
+        System.out.println("Saldo actual: $" + cuenta.getSaldo());
 
         if (cuenta != null) {
             cuentas.add(cuenta);
@@ -42,6 +41,7 @@ public class CuentaService implements ICuenta {
             ingresoCorrecto = false;
         } else {
             double ingresaCantidad = cuenta.getSaldo() + cantidad;
+            cuenta.setSaldo(ingresaCantidad);
         }
 
         return ingresoCorrecto;
@@ -54,13 +54,15 @@ public class CuentaService implements ICuenta {
         if(cantidad < 0){
             egresoCorrecto = false;
         } else if (cuenta.getSaldo() >= 0){
+            System.out.println("Operacion confirmada!");
             double descontarCantidad = cuenta.getSaldo() - cantidad;
-            System.out.println("Transferir: $" + descontarCantidad + ", es viable!");
+            cuenta.setSaldo(descontarCantidad);
         }else {
             egresoCorrecto = false;
         }
         return egresoCorrecto;
     }
+
     @Override
     public boolean transferencia(Cuenta emisor, Cuenta receptor, double cantidad) {
         boolean correcto = true;
@@ -77,9 +79,15 @@ public class CuentaService implements ICuenta {
     }
 
     @Override
-    public void mostrarDetalle() {
-        System.out.println("REVISAR");
+    public void mostrarDetalle(Cuenta emisor, Cuenta receptor){
+        System.out.println("---------------------------");
+        System.out.println("***     Comprobante     ***");
+        System.out.println("Realizo la operación: ");
+        System.out.println(emisor.mostrarDetalle());
+        System.out.println("---------------------------");
+        System.out.println("Destinatario: ");
+        System.out.println(receptor.mostrarDetalle());
+        System.out.println("---------------------------");
 
     }
-
 }

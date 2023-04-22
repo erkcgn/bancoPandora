@@ -13,9 +13,9 @@ public class Cuenta {
     }
 
     public String mostrarDetalle() {
-        return "Detalle Cuenta: " + '\n'+
-                "Saldo: " + getSaldo() + '\n'+
-                "Titular: " + getTitular();
+        return "Información de la Cuenta: " + '\n'+
+                "Saldo Actual: $ " + getSaldo() + '\n'+
+                  getTitular().mostrarDatos();
     }
 
     public Persona getTitular() {
@@ -36,9 +36,8 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        return "Cuenta{" +
+        return "Cuenta: " +
                 "titular=" + titular +
-                ", saldo=" + saldo +
-                '}';
+                ", saldo=" + saldo ;
     }
 }
