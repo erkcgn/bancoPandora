@@ -1,6 +1,6 @@
 package com.company.entity;
 
-public class Cuenta {
+public abstract class Cuenta {
     private Persona titular;
     private double saldo;
 
@@ -27,6 +27,8 @@ public class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public abstract void mostrarDetalle();
 
     @Override
     public String toString() {
