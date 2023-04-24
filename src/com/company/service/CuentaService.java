@@ -1,8 +1,6 @@
 package com.company.service;
 
 import com.company.entity.Cuenta;
-import com.company.entity.Persona;
-import com.company.entity.Sucursal;
 import com.company.interfaces.ICuenta;
 
 import java.util.ArrayList;
@@ -54,7 +52,7 @@ public class CuentaService implements ICuenta {
         if(cantidad < 0){
             egresoCorrecto = false;
         } else if (cuenta.getSaldo() >= 0){
-            System.out.println("Operacion confirmada!");
+            System.out.println("Operación confirmada!");
             double descontarCantidad = cuenta.getSaldo() - cantidad;
             cuenta.setSaldo(descontarCantidad);
         }else {
@@ -66,14 +64,14 @@ public class CuentaService implements ICuenta {
     @Override
     public boolean transferencia(Cuenta emisor, Cuenta receptor, double cantidad) {
         boolean correcto = true;
-        if (cantidad < 0){
+        if (cantidad < 0 && cantidad > emisor.getSaldo()){
             correcto = false;
-            System.out.println("Saldo insuficiente");
-        }else if (emisor.getSaldo() >= cantidad){
+        }else if (cantidad <= emisor.getSaldo()){
                 egresarDinero(emisor, cantidad);
                 ingresarDinero(receptor, cantidad);
         } else {
             correcto = false;
+            System.out.println("Saldo insuficiente!");
         }
         return correcto;
     }
@@ -82,10 +80,10 @@ public class CuentaService implements ICuenta {
     public void mostrarDetalle(Cuenta emisor, Cuenta receptor){
         System.out.println("---------------------------");
         System.out.println("***     Comprobante     ***");
-        System.out.println("Realizo la operación: ");
+        System.out.println("    Realizo la operación   ");
         System.out.println(emisor.mostrarDetalle());
         System.out.println("---------------------------");
-        System.out.println("Destinatario: ");
+        System.out.println("        Destinatario       ");
         System.out.println(receptor.mostrarDetalle());
         System.out.println("---------------------------");
 

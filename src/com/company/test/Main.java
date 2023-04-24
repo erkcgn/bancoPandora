@@ -15,13 +15,18 @@ public class Main {
 
         System.out.println("Datos de quien realiza la Operación: ");
         Cuenta cuentaEmisor = cuentaService.crearCuenta();
+        System.out.println("                                     ");
         System.out.println("Datos del Destinatario: ");
         Cuenta cuentaReceptor = cuentaService.crearCuenta();
+        System.out.println("                                     ");
         System.out.println("Ingrese monto a transferir: ");
         double cantidad = input.nextDouble();
 
-        cuentaService.transferencia(cuentaEmisor, cuentaReceptor, cantidad);
+        while(cuentaService.transferencia(cuentaEmisor, cuentaReceptor, cantidad)){
+            cuentaService.mostrarDetalle(cuentaEmisor, cuentaReceptor);
+        }
 
-        cuentaService.mostrarDetalle(cuentaEmisor, cuentaReceptor);
+
+
     }
 }
