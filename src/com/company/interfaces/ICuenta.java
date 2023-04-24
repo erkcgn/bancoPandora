@@ -15,4 +15,6 @@ public interface ICuenta {
     public boolean ingresarDinero(Cuenta cuenta, double cantidad);
     public boolean egresarDinero(Cuenta cuenta, double cantidad);
     public void mostrarDetalle(Cuenta emisor, Cuenta receptor);
+
+    public void realizarTransferencia();
 }

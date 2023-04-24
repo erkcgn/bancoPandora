@@ -5,8 +5,11 @@ import com.company.interfaces.ICuenta;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class CuentaService implements ICuenta {
+
+    Scanner input = new Scanner(System.in).useDelimiter("\n");
     List<Cuenta> cuentas = new ArrayList<>();
     PersonaService personaService = new PersonaService();
     SucursalService sucursalService = new SucursalService();
@@ -88,4 +91,26 @@ public class CuentaService implements ICuenta {
         System.out.println("---------------------------");
 
     }
+
+    @Override
+    public void realizarTransferencia() {
+        CuentaService cuentaService = new CuentaService();
+
+        System.out.println("Datos de quien realiza la Operación: ");
+        Cuenta cuentaEmisor = cuentaService.crearCuenta();
+        System.out.println("                                     ");
+        System.out.println("Datos del Destinatario: ");
+        Cuenta cuentaReceptor = cuentaService.crearCuenta();
+        System.out.println("                                     ");
+        System.out.println("Ingrese monto a transferir: ");
+        double cantidad = input.nextDouble();
+
+        while(cuentaService.transferencia(cuentaEmisor, cuentaReceptor, cantidad)){
+            cuentaService.mostrarDetalle(cuentaEmisor, cuentaReceptor);
+            break;
+        }
+
+    }
+
+
 }
