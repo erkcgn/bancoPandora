@@ -2,20 +2,23 @@ package com.company.entity;
 
 public class Cuenta {
     private Persona titular;
+    private Sucursal sucursal;
     private double saldo = 1000;
 
     public Cuenta() {
     }
 
-    public Cuenta(Persona titular, double saldo) {
+    public Cuenta(Persona titular, Sucursal sucursal,double saldo) {
         this.titular = titular;
+        this.sucursal = sucursal;
         this.saldo = saldo;
     }
 
     public String mostrarDetalle() {
         return "Información de la Cuenta: " + '\n'+
-                "Saldo Actual: $ " + getSaldo() + '\n'+
-                  getTitular().mostrarDatos();
+                 getTitular().mostrarDatos() + '\n'+
+                  "Saldo Actual: $ " + getSaldo() + '\n'+
+                    getSucursal().mostrarDatos();
     }
 
     public Persona getTitular() {
@@ -34,10 +37,20 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
+    }
+
     @Override
     public String toString() {
-        return "Cuenta: " +
+        return "Cuenta{" +
                 "titular=" + titular +
-                ", saldo=" + saldo ;
+                ", sucursal=" + sucursal +
+                ", saldo=" + saldo +
+                '}';
     }
 }
